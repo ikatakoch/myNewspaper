@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>トップページ | じぶん新聞</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style media="screen">
+      .logo {
+        width: 100%;
+        max-width: 600px;
+        display: block;
+        margin: 0 auto;
+      }
+      body {
+        background-image: url('images/logo-back.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 0;
+      }
+      .start {
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+      }
+
+      /* 画面幅が 768px 以下の場合のスタイル */
+      @media screen and (max-width: 768px) {
+        .start {
+          font-size: 1rem;
+          padding: 0.8rem 1.5rem;
+        }
+        .logo {
+          max-width: 90%;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .start {
+          font-size: 0.9rem;
+          padding: 0.6rem 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <img src="images/logo.png" alt="" class="logo">
+    <button type="button" class="start button" onclick="start()">さっそくつくる！</button>
+    <script type="text/javascript">
+      function start() {
+        const cookie = document.cookie;
+        if (cookie.includes("setting=true")) { 
+          window.location.href = "create/"
+        } else {
+            window.location.href = "age_confirmation/";
+        }
+      }
+    </script>
+  </body>
+</html>
